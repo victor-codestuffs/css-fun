@@ -1,0 +1,52 @@
+*
+  margin: 0
+  padding: 0
+
+html, body
+  background-color: #bdd5d7
+  height: 100%
+
+.text
+  text-align: center
+  background-color: #fff
+  margin: auto
+  padding: 40px 0
+  height: 100px
+  width: 100%
+  position: absolute
+  top: 0
+  bottom: 0
+  z-index: 1
+  &:after
+    display: block
+    font: 72px 'Playfair Display', serif
+    font-weight: 400
+
+// list variable with words; comma separators are optional, spaces are cool too
+$
+// store length of words list in a variable; use length() method with list as argument
+$
+// define max width of anticipated browser
+$
+// iterator to help determine index of last item in list
+$
+
+// for each item in the list
+@each
+  @media screen and (max-width: $) // place max width variable from above as value for max-width property
+    .text:after
+      content: "#{$}" // place item variable within curly braces
+    // if the iterator is the same as the length of the list, do something special
+    @if
+      body
+        background-color: #f1ad98
+      .text:after
+        font-weight: 700
+        font-style: italic
+  // max width variable gets max width - (1920px / length of words list); add !global after the statement
+  $
+  // iterator gets iterator + 1; add !global after the statement
+  $
+
+// to compile, use grunt OR in Terminal, navigate to the project folder and enter "sass --watch practice.sass:practice.css"
+// solution is in solution.sass

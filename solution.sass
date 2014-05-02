@@ -1,0 +1,49 @@
+*
+  margin: 0
+  padding: 0
+
+html, body
+  background-color: #bdd5d7
+  height: 100%
+
+.text
+  text-align: center
+  background-color: #fff
+  margin: auto
+  padding: 40px 0
+  height: 100px
+  width: 100%
+  position: absolute
+  top: 0
+  bottom: 0
+  z-index: 1
+  &:after
+    display: block
+    font: 72px 'Playfair Display', serif
+    font-weight: 400
+
+// list variable with words; comma separators are optional, spaces are cool too
+$words: "How", "do", "it", "know?"
+// store length of words list in a variable
+$words-length: length($words)
+// define max width of anticipated browser
+$max: 1920px
+// iterator to help determine index of last item in list
+$i: 1
+
+// for each item in the list
+@each $word in $words
+  @media screen and (max-width: $max) // place max width variable from above as value for max-width property
+    .text:after
+      content: "#{$word}" // place item variable within curly braces
+    // if the iterator is the same as the length of the list, do something special
+    @if $i == $words-length
+      body
+        background-color: #f1ad98
+      .text:after
+        font-weight: 700
+        font-style: italic
+  // max width variable gets max width - (1920px / length of words list); add !global after the statement
+  $max: $max - (1920px / $words-length) !global
+  // iterator gets iterator + 1; add !global after the statement
+  $i: $i + 1 !global

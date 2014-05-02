@@ -17,18 +17,18 @@ module.exports = function(grunt) {
     },
     sass: {
       dist: {
-        files: { 'style.css': 'style.sass' }
+        files: { 'practice.css': 'practice.sass' }
       }
     },
     watch: {
       options: { livereload: true },
       css: {
-        files: ['style.sass'],
+        files: ['practice.sass'],
         tasks: ['sass'],
         options: { spawn: false }
       },
       html: {
-        files: ['index.html'],
+        files: ['practice.html'],
         options: { spawn: false }
       }
     }
