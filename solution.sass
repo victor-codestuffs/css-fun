@@ -18,20 +18,21 @@ html, body
   bottom: 0
   z-index: 1
   &:after
+    content: "I haz a secret."
     display: block
     font: 72px 'Playfair Display', serif
     font-weight: 400
 
 // list variable with words; comma separators are optional, spaces are cool too
-$words: "How", "do", "it", "know?"
-// store length of words list in a variable
+$words: "Bananas", "are", "grape."
+// store length of words list in a variable; use length function with list as the argument
 $words-length: length($words)
-// define max width of anticipated browser
-$max: 1920px
-// iterator to help determine index of last item in list
+// define max width of anticipated browser; don't change the following value
+$max: 1440px
+// iterator to help determine index, used for checking last item in list
 $i: 1
 
-// for each item in the list
+// loop each item in the list
 @each $word in $words
   @media screen and (max-width: $max) // place max width variable from above as value for max-width property
     .text:after
@@ -43,7 +44,7 @@ $i: 1
       .text:after
         font-weight: 700
         font-style: italic
-  // max width variable gets max width - (1920px / length of words list); add !global after the statement
-  $max: $max - (1920px / $words-length) !global
+  // max width variable gets max width - (1440px / length of words list); add !global after the statement
+  $max: $max - (1440px / $words-length) !global
   // iterator gets iterator + 1; add !global after the statement
   $i: $i + 1 !global

@@ -18,26 +18,7 @@ html, body {
   bottom: 0;
   z-index: 1; }
   .text:after {
+    content: "I haz a secret.";
     display: block;
     font: 72px "Playfair Display", serif;
     font-weight: 400; }
-
-@media screen and (max-width: 1920px) {
-  .text:after {
-    content: "How"; } }
-@media screen and (max-width: 1440px) {
-  .text:after {
-    content: "do"; } }
-@media screen and (max-width: 960px) {
-  .text:after {
-    content: "it"; } }
-@media screen and (max-width: 480px) {
-  .text:after {
-    content: "know?"; }
-
-  body {
-    background-color: #f1ad98; }
-
-  .text:after {
-    font-weight: 700;
-    font-style: italic; } }
