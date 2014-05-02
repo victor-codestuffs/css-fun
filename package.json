@@ -1,0 +1,14 @@
+{
+  "name": "css-fun",
+  "version": "0.1.0",
+  "description": "Fun with CSS",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-sass": "~0.7.3",
+    "grunt-contrib-connect": "~0.7.1"
+  },
+  "author": "Victor Hoang",
+  "license": "MIT"
+}

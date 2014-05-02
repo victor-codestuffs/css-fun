@@ -1,0 +1,58 @@
+*
+  margin: 0
+  padding: 0
+
+html, body, .sky
+  height: 100%
+
+.sky
+  background: #000 url('img/cs.jpg') repeat top right fixed 
+  position: relative
+  z-index: 1
+
+.moon
+  background-image: url('img/moon.png')
+  height: 80px
+  width: 80px
+  position: absolute
+  z-index: 2
+  right: 80px
+
+.dragon
+  background-image: url('img/dragon.png')
+  height: 100px
+  width: 100px
+  margin: auto
+  position: absolute
+  top: 0
+  bottom: 0
+  z-index: 10
+
+.clouds
+  height: 315px
+  width: 100%
+  position: absolute
+  bottom: 0
+
+@for $i from 2 through 5
+  .c#{$i}
+    background-image: url('img/c#{$i}.png')
+    z-index: #{$i}
+
+$max: 1920px
+@while $max > 300
+  @media screen and (max-width: $max)
+    .moon
+      bottom: $max / 100px * 4%
+    .dragon
+      right: $max / 2
+      @if $max % 2 == 0
+        background-position: -100px 0
+      @else
+        background-position: 0 0
+    .sky
+      background-position: -($max) 0
+    @for $i from 2 through 5
+      .c#{$i}
+        background-position: -($max * $i) 0
+  $max: $max - 5 !global
